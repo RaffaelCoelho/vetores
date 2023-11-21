@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main()
+{
+
+    setlocale(LC_ALL, "portuguese");
+
+    int tamanholinha = 2;
+    int tamanhocoluna = 2;
+    int tamanhonomes = 2;
+    int notas[tamanholinha][tamanhocoluna];
+    int i; // linha
+    int j; // coluna
+    char alunos[tamanhonomes][200];
+
+    for (i = 0; i < tamanhonomes; i++)
+    {
+
+        printf("\nDigite o nome do %dº aluno:", i + 1);
+        gets(alunos[i]);
+    
+     for (j = 0; j < tamanhocoluna; j++)
+        {
+
+            printf("\nDigite a %dº nota do aluno:", j + 1);
+            scanf("%d", &notas[i][j]);
+         fflush(stdin);
+        }
+    
+    }
+
+    
+
+    // exibição das notas
+   printf("\nExibindo dados dos alunos...\n");
+
+    for (i = 0; i < tamanholinha; i++)
+    {
+        printf("\n\nNome do aluno: %s", alunos[i]);
+        
+        
+        for (j = 0; j < tamanhocoluna; j++)
+        {
+            
+            //n = 0;
+            printf("\n %dº nota do aluno: %d", j + 1, notas[i][j]);
+        }
+    }
+
+
+
+    return 0;
+}
